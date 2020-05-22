@@ -1,5 +1,5 @@
 # Introducción 
-TODO: Proporcione una breve introducción del proyecto. Esta sección debe explicar los objetivos o los motivos del proyecto. 
+Este proyecto tiene como proposito proporcionar unas herramientas para automatizar tareas manuales en la preparacion de los desarrollos en cuanto a intelisis se refiere, y aotras tareas de analisis.
 
 # Tareas iniciales
 TODO: Guíe a los usuarios para que apliquen el código a su sistema propio sin ningún problema. En esta sección se puede hablar sobre:
