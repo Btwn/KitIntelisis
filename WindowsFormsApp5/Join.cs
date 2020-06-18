@@ -40,11 +40,12 @@ namespace WindowsFormsApp5
                     TituloComponenteOriginal = Regex.Match(Componente.Value, @"(?<=^\[).*\]+?");
                     TituloComponenteOriginal = Regex.Match(TituloComponenteOriginal.Value, @".*(?=\])");
                     string componenteCopia = Componente.Value;
+                    componenteCopia = componenteCopia.Replace("$", "$$");
                     string[] LineasComponente = Componente.Value.Split('\n');
                     string acumulado = "";
                     foreach (string LineaComponente in LineasComponente)
                     {
-                        if (!Regex.IsMatch(LineaComponente, @"<CONTINUA>\r?$") || Regex.IsMatch(LineaComponente, @"^.*?=<CONTINUA>")) continue;                        
+                        if (!Regex.IsMatch(LineaComponente, @"<CONTINUA>\r?$") || Regex.IsMatch(LineaComponente, @"^.*?=<CONTINUA>..")) continue;                        
                         acumulado = LineaComponente;
                         Match nombreCampo = Regex.Match(acumulado, @"^.+?(?==)"); 
                         int contador = 1;
@@ -69,7 +70,7 @@ namespace WindowsFormsApp5
                     }
                   //  MessageBox.Show(TituloComponenteOriginal.Value);
                     TextoDestinoColeccion[NombreArchivos.Name] = 
-                        Regex.Replace(TextoDestinoColeccion[NombreArchivos.Name], String.Format(@"^\[{0}\][\s\t]*((\n|\r)(?!(;.*|)(\n|)^\[.+?\]).*?$)+", TituloComponenteOriginal.Value), componenteCopia, RegexOptions.Multiline);
+                        Regex.Replace(TextoDestinoColeccion[NombreArchivos.Name], String.Format(@"^\[{0}\][\s\t]*((\n|\r)(?!(;.*|)(\n|)^\[.+?\]).*?$)+", Regex.Escape(TituloComponenteOriginal.Value)), componenteCopia, RegexOptions.Multiline);
                 }
             }
 

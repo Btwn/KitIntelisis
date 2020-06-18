@@ -15,8 +15,8 @@ namespace WindowsFormsApp5
         public Form1()
         {
             InitializeComponent();
-            tbxReportes.Text = "C:\\Users\\anrodriguez\\Desktop\\ArchivosConCONTINUA";
-            tbxDestino.Text = "C:\\Users\\anrodriguez\\Desktop\\ArchivosConCONTINUA\\copia";
+            tbxReportes.Text = @"C:\cadiaz\mavi\migracion\Versiones\6000Capacitacion\test";
+            tbxDestino.Text = @"C:\cadiaz\mavi\migracion\Versiones\6000Capacitacion\testCopia";
         }
 
         private void btnCodigoOriginal_Click(object sender, EventArgs e)
